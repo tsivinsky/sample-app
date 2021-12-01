@@ -17,6 +17,7 @@ export function Modal({ onClose }) {
         <div>
           <form>
             <input type="text" placeholder="Текст здесь" />
+            <input type="text" placeholder="Другой текст здесь" />
             <button
               type="submit"
               onClick={(e) => {
