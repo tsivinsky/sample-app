@@ -1,8 +1,21 @@
 .navbar {
   padding: 30px 10px;
   margin: 0 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 
   a {
     color: var(--foreground-alt);
+    padding: 4px;
+  }
+
+  .btn-open-modal {
+    border: 2px solid transparent;
+    background: var(--background-alt);
+    padding: 4px;
+    border-radius: 3px;
+    color: var(--foreground-alt);
+    cursor: pointer;
   }
 }
