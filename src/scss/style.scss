@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: Helvetica;
+}
+
+:root {
+  --background: #192233;
+  --background-alt: #212c42;
+  --foreground: #dce0f4;
+  --foreground-alt: #707d96;
+  --primary: #6781f7;
+}
+
+a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+html,
+body,
+#__next,
+main {
+  height: 100%;
+}
+
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  cursor: pointer;
+
+  svg path {
+    fill: var(--foreground);
+  }
+
+  @media screen and (max-width: 430px) {
+    display: block;
+  }
+}
+
+#__next {
+  background: var(--background);
+  display: grid;
+  grid-template-columns: 250px 1fr;
+
+  #page {
+    display: flex;
+    flex-direction: column;
+
+    main {
+      background: var(--background-alt);
+      margin: 0 10px;
+      padding: 40px;
+      border-radius: 50px 50px 0 0;
+
+      h1 {
+        color: #ffffff;
+      }
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    grid-template-columns: 1fr;
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      transform: translateX(-100%);
+      background: var(--background);
+      transition: all 0.3s ease;
+      transition-property: transform;
+
+      &.show {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@import "./_sidebar.scss";
+@import "./navbar";
