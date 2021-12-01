@@ -1,0 +1,91 @@
+.structure-page {
+  .items {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+
+    .item {
+      height: 230px;
+      overflow-y: hidden;
+      background: var(--background);
+      border-radius: 20px;
+      padding: 15px 20px;
+      display: grid;
+      grid-template-rows: 20% 1fr;
+      gap: 30px;
+      transition: all 0.3s ease;
+      transition-property: box-shadow;
+
+      @media screen and (max-width: 430px) {
+        padding: 15px;
+      }
+
+      .table {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .top {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          border-bottom: 2px solid var(--foreground-alt);
+        }
+
+        .text {
+          display: grid;
+          grid-template-columns: 50% 50%;
+        }
+
+        span {
+          color: var(--foreground);
+          font-size: 0.8em;
+        }
+      }
+
+      .partners {
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        left: 0;
+        top: 0;
+
+        scrollbar-width: thin;
+
+        // TODO: Add styles for scrollbar in Chrome
+
+        .partner {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.6;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+
+          span {
+            color: var(--foreground-alt);
+            font-size: 0.8em;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 4px 4px 0 rgba($color: #000, $alpha: 0.25);
+      }
+    }
+  }
+}

@@ -25,6 +25,7 @@ body,
 #__next,
 main {
   height: 100%;
+  background: var(--background);
 }
 
 .hamburger {
@@ -89,3 +90,4 @@ main {
 
 @import "./_sidebar.scss";
 @import "./navbar";
+@import "./structure";
